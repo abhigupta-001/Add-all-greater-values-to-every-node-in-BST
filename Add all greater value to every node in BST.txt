@@ -1,0 +1,24 @@
+
+Node * modifiedbst(Node * root,int &sum)
+{
+    if(root==NULL)
+     return NULL;
+     
+    modifiedbst( root->right,sum);
+    sum=sum+root->data;
+    root->data= sum;
+     modifiedbst( root->left,sum);
+     
+     return root;
+     
+}
+Node* modify(Node *root)
+{
+    // Your code here
+    if(root==NULL)
+     return NULL;
+     
+     int sum=0;
+     
+     return modifiedbst(root,sum);
+}
